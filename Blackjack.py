@@ -6,7 +6,7 @@ import time
 are being used'''
 
 
-class Card: # thank you stackoverflow I now get it 
+class Card: 
     def __init__(self, value, suit, name):
         self.value = value
         self.suit = suit
@@ -113,7 +113,7 @@ def scoreboard(final, handNum):
     bet = hands[handNum].bet
     string = ""
     string += f"Oveall Amount {int(player.value)}\n"
-    string += f"Current Bet: {int(bet)}\n" # make to the hand later
+    string += f"Current Bet: {int(bet)}\n" 
     if final:
         string += f"Dealer: {[card.name + card.suit[:1] for card in hands[0].cards]} --> {values(hands[0])}\n"
     elif hands[0].cards[0].name == "A":
@@ -132,7 +132,7 @@ def scoreboard(final, handNum):
     
     print(string)
     
-def zzz():
+def zzz(): # yes silly function name but it's 4am gang
     time.sleep(2) # How long to sleep
 
 def game():
@@ -266,7 +266,7 @@ def game():
             bet = hands[handNum].bet
             if values(hands[0]) > 21:
                 scoreboard(True, handNum)
-                print(("Dealer busted everywhere? You win!\n"))
+                print(("THE DEALER HAS BUSTED! You win!\n"))
                 player.value += (bet * 2)  
                 totalProfit += bet * 2
 
@@ -299,7 +299,7 @@ def game():
 game()
 
 while True:
-    print("AHAHAHHA you busted shit ass blackjack mf player")
+    print("You'reeeee out!")
     choice = input("Yes (Y) if you would like to try again").lower()
     if choice == "y":
         game()
